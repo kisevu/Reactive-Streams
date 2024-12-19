@@ -45,6 +45,20 @@ public class DataController {
     public ResponseEntity<?> findCustomerById(@RequestParam String customerId){
         return new ResponseEntity<>(customerService.findCustomerById(customerId), HttpStatus.OK);
     }
+    /*
+    * Expected output is to retrieve name of the buyer
+    * alongside their total buy count
+    * i.e
+    * {
+    "Kevin Ameda": 1500.0,
+    "Oscar Kisala": 100.0
+}
+    * */
+
+    @GetMapping("/sales/summary")
+    public ResponseEntity<?> calculateSummary(){
+        return new ResponseEntity<>(customerService.calculateSummary(),HttpStatus.OK);
+    }
 
 }
 

@@ -12,6 +12,8 @@ import com.ameda.kevin.works.reactive_streams.dto.CustomerDTO;
 import com.ameda.kevin.works.reactive_streams.dto.OrderDTO;
 import reactor.core.publisher.Mono;
 
+import java.util.Map;
+
 
 public interface CustomerService {
 
@@ -20,4 +22,6 @@ public interface CustomerService {
     Mono<Customer> findCustomerById(String customerId);
 
     Mono<Order> placeOrder(OrderDTO dto);
+
+    Mono<Map<String, Double>>  calculateSummary();
 }
