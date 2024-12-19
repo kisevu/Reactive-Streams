@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spring Boot with Thymeleaf</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h1 th:text="'Welcome, ' + ${username} + '!'">Welcome, User!</h1>
+
+  <h2>Products List</h2>
+  <ul>
+    <li th:each="product : ${products}" th:text="${product.name}"></li>
+  </ul>
+
+  <form action="#" th:action="@{/submit}" method="post">
+    <div class="form-group">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" th:value="${userName}" class="form-control"/>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<!-- JavaScript libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+`

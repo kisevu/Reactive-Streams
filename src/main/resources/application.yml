@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: reactive-streams
+  data:
+    mongodb:
+      uri: mongodb+srv://ameda:ameda@ameda-cluster.jyjnpru.mongodb.net/?retryWrites=true&w=majority&appName=ameda-cluster
+      database: reactive_db
